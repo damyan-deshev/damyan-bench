@@ -1,0 +1,50 @@
+{
+  "model": "MiniMax-M2.7-UD-IQ3_S",
+  "stream": false,
+  "temperature": 1.0,
+  "max_tokens": 220,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Call exactly one tool: triage_patient with severity=urgent, specialty=cardiology, rationale=chest pain. Do not answer normally."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "triage_patient",
+        "description": "Assign triage lane",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "severity": {
+              "type": "string",
+              "enum": [
+                "routine",
+                "urgent",
+                "critical"
+              ]
+            },
+            "specialty": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "severity",
+            "specialty",
+            "rationale"
+          ]
+        }
+      }
+    }
+  ],
+  "top_p": 0.95,
+  "top_k": 40
+}

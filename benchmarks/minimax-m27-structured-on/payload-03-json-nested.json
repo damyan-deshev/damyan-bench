@@ -1,0 +1,15 @@
+{
+  "model": "MiniMax-M2.7-UD-IQ3_S",
+  "stream": false,
+  "temperature": 0.2,
+  "max_tokens": 420,
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Return only valid JSON. Schema: {\"patient\":{\"id\":string,\"age\":number,\"flags\":string[]},\"labs\":[{\"name\":string,\"value\":number,\"unit\":string}],\"ok\":boolean}. Use id=pt-7, age=42, flags=[\"fasting\",\"repeat\"], labs=[{name:glucose,value:5.4,unit:mmol/L},{name:CRP,value:3,unit:mg/L}], ok=true. No markdown."
+    }
+  ]
+}

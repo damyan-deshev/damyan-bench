@@ -1,0 +1,27 @@
+{
+  "model": "MiniMax-M2.7-UD-IQ3_S",
+  "stream": false,
+  "temperature": 0.2,
+  "max_tokens": 180,
+  "chat_template_kwargs": {"enable_thinking": false},
+  "messages": [
+    {"role": "user", "content": "Call the tool echo_ok with text=OK and count=2. Do not answer normally."}
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "echo_ok",
+        "description": "Echo text and count",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "text": {"type": "string"},
+            "count": {"type": "integer"}
+          },
+          "required": ["text", "count"]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "model": "MiniMax-M2.7-UD-IQ3_S",
+  "stream": false,
+  "temperature": 0.2,
+  "max_tokens": 360,
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Call create_ticket with title=Network outage and priority=high. Do not add any other arguments. Do not answer normally."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "create_ticket",
+        "description": "Create a support ticket",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "priority": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          },
+          "required": [
+            "title",
+            "priority"
+          ]
+        }
+      }
+    }
+  ]
+}

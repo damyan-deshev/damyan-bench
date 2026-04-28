@@ -1,0 +1,50 @@
+{
+  "model": "MiniMax-M2.7-UD-IQ3_S",
+  "stream": false,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 40,
+  "max_tokens": 420,
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Think carefully step by step about the urgency, but do not show your reasoning. Then call triage_patient with severity=urgent, specialty=cardiology, rationale=chest pain. Do not answer normally."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "triage_patient",
+        "description": "Assign triage lane",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "severity": {
+              "type": "string",
+              "enum": [
+                "routine",
+                "urgent",
+                "critical"
+              ]
+            },
+            "specialty": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "severity",
+            "specialty",
+            "rationale"
+          ]
+        }
+      }
+    }
+  ]
+}

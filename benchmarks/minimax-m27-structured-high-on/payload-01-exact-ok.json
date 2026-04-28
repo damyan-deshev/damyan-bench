@@ -1,0 +1,17 @@
+{
+  "model": "MiniMax-M2.7-UD-IQ3_S",
+  "stream": false,
+  "temperature": 1.0,
+  "max_tokens": 256,
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Reply with exactly OK only."
+    }
+  ],
+  "top_p": 0.95,
+  "top_k": 40
+}

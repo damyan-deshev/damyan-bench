@@ -1,0 +1,15 @@
+{
+  "model": "MiniMax-M2.7-UD-IQ3_S",
+  "stream": false,
+  "temperature": 0.2,
+  "max_tokens": 320,
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Return only valid JSON as an array with exactly these two objects: [{\"id\":1,\"name\":\"alpha\"},{\"id\":2,\"name\":\"beta\"}]. No markdown, no extra text."
+    }
+  ]
+}

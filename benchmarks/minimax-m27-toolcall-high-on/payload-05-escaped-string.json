@@ -1,0 +1,41 @@
+{
+  "model": "MiniMax-M2.7-UD-IQ3_S",
+  "stream": false,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 40,
+  "max_tokens": 520,
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Call send_note with recipient=lab-team and message exactly: He said \"repeat CBC\" tomorrow\\nBring prior CRP\\nFolder: C:\\\\lab\\\\pt-7. Do not answer normally."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "send_note",
+        "description": "Send an internal note",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "recipient": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "recipient",
+            "message"
+          ]
+        }
+      }
+    }
+  ]
+}

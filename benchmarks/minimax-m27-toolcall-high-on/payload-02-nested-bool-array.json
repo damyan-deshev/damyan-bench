@@ -1,0 +1,48 @@
+{
+  "model": "MiniMax-M2.7-UD-IQ3_S",
+  "stream": false,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 40,
+  "max_tokens": 420,
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  },
+  "messages": [
+    {
+      "role": "user",
+      "content": "Call plan_visit for patient pt-7 with tests CBC and CRP and fasting=true. Do not answer normally."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "plan_visit",
+        "description": "Plan a clinical visit",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "patient_id": {
+              "type": "string"
+            },
+            "tests": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "fasting": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "patient_id",
+            "tests",
+            "fasting"
+          ]
+        }
+      }
+    }
+  ]
+}
