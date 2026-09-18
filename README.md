@@ -2,7 +2,7 @@
 
 Local benchmark suite for OpenAI-compatible model endpoints, focused on coding, tool-use, boundary behavior, and operator-style tasks.
 
-“OpenAI-compatible” means API-shape compatible endpoints, including local servers such as llama.cpp-style runtimes; the suite is not tied to a specific hosted provider.
+“OpenAI-compatible” means API-shape compatible endpoints, including local servers such as llama.cpp-style runtimes. The suite is not tied to a specific hosted provider.
 
 ## What It Tests
 
